@@ -7,6 +7,86 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="ConnectButton" 
+                Grid.Row="0" 
+                Grid.Column="0" 
+                Click="ConnectButton_Click" 
+                Content="Connect"/>
         
+        <Button x:Name="DisconnectButton" 
+                IsEnabled="False" 
+                Grid.Row="0" 
+                Grid.Column="1" 
+                Click="DisconnectButton_Click" 
+                Content="Disconnect" />
+        
+        <TextBlock x:Name="Status" 
+                   Grid.Row="0" 
+                   Grid.Column="2" 
+                   Text = "Disconnected" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center" 
+                   FontSize="30" 
+                   Foreground="Red"
+                   FontWeight="UltraBold"/>
+
+        <ComboBox x:Name="SelectListForShow" 
+                  Grid.Row="1" 
+                  Grid.Column="0"
+                  SelectionChanged="SelectListForShow_SelectionChanged"
+                  FontSize="20"
+                  HorizontalContentAlignment="Center"
+                  VerticalContentAlignment="Center"
+                  IsEnabled="False">
+
+                <TextBlock Text="Full list"/>
+                <TextBlock Text="Show all name"/>
+                <TextBlock Text="Show all color"/>
+                <TextBlock Text="Show max calories"/>
+                <TextBlock Text="Show min calories"/>
+                <TextBlock Text="Show average calories"/>
+                <TextBlock Text="Quantity vegetables"/>
+                <TextBlock Text="Quantity fruits"/>
+                <TextBlock Text="Show quantity products by color"/>
+                <TextBlock Text="Show quantity products all colors"/>
+                <TextBlock Text="Show products with calories less than"/>
+                <TextBlock Text="Show products with calories more than"/>
+                <TextBlock Text="Show products with calories more than and less than"/>
+                <TextBlock Text="Show products with color yellow of red"/>
+
+
+
+
+
+
+        </ComboBox>
+
+        <Button x:Name="ShowButton" 
+                Grid.Row="2" 
+                Grid.Column="0" 
+                Content="Show" 
+                FontSize="30"
+                Click="ShowButton_Click"
+                IsEnabled="False"/>
+
+        <ListBox x:Name="MainText" 
+                 Grid.Row="1" 
+                 Grid.RowSpan="2" 
+                 Grid.Column="1" 
+                 Grid.ColumnSpan="2"/>
+
     </Grid>
 </Window>
